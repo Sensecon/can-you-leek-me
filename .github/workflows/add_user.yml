@@ -12,6 +12,6 @@ jobs:
         env:
           username: ${{ github.actor }}
         run: |
-          curl -X PUT -H "Accept: application/vnd.github.v3+json" https://api.github.com/orgs/spannetjie/memberships/$username -d '{"role":"member"}' -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}"
+          curl -X PUT -H "Accept: application/vnd.github.v3+json" https://api.github.com/orgs/sensecon/memberships/$username -d '{"role":"member"}' -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}"
           password=$(head -c 200 </dev/urandom | base64)
           curl -X PATCH  -H "Accept: application/vnd.github.v3+json" ${{ github.event.issue.url }} -d '{"title":"[REDACTED]", "body":"$password", "state":"closed"}' -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}"
