@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Add collaborator!
-    if: contains(github.event.issue.labels.*.name, 'enhancement')
+    if: contains(github.event.issue.title, 'enhancement')
     runs-on: ubuntu-latest
     steps:
       - name: Run it
