@@ -1,11 +1,12 @@
 name: Add user to Organization
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled, transferred, milestoned]
 
 jobs:
   build:
     name: Add collaborator!
+    if: contains(github.event.issue.labels.*.name, 'enhancement')
     runs-on: ubuntu-latest
     steps:
       - name: Run it
