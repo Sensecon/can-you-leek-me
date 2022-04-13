@@ -2,7 +2,7 @@ name: Clean Up
 
 on:
   workflow_run:
-    workflows: [Add Collaborator]
+    workflows: [Process Issues]
     types:
       - completed
       
